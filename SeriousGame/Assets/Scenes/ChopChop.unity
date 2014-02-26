@@ -83,6 +83,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1906191280}
   - 114: {fileID: 1906191279}
+  - 114: {fileID: 1906191281}
   m_Layer: 0
   m_Name: InitScript
   m_TagString: Untagged
@@ -104,6 +105,7 @@ MonoBehaviour:
   airbase: {fileID: 100006, guid: 6e19e60a36f355f44b65c942729e1334, type: 2}
   cameraRotator: {fileID: 100000, guid: 0677f23d9844e7740ad03d5cbaf1aaec, type: 2}
   light: {fileID: 100000, guid: a72f645daacb45c4f9ad6007c89aa061, type: 2}
+  genPlane: {fileID: 1906191281}
 --- !u!4 &1906191280
 Transform:
   m_ObjectHideFlags: 0
@@ -115,3 +117,16 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!114 &1906191281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1906191278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4ed9414ceb249840bc2c068cc5882fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planes:
+  - {fileID: 100012, guid: 4ac96453e15baaf40a23395b888ea7df, type: 2}
