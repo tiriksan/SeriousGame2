@@ -297,7 +297,7 @@ public class PlaneCheckScriptTest : MonoBehaviour {
                 }
                 else
                 {
-                    message = "The plane was broken. \nYou made the right decision!";                    
+                    message = "The plane was not broken. \nYou made the right decision!";                    
                 }
             }
             else
