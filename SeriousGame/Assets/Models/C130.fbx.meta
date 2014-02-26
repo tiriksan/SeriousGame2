@@ -1,0 +1,113 @@
+fileFormatVersion: 2
+guid: dc92d034d6d48b94f8dc4ab6792b6d22
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: glass
+    100004: interior
+    100006: rudder_steering
+    100008: wheel_front_left
+    100010: wheel_front_right
+    100012: wing_left_rotor1
+    100014: wing_left_rotor2
+    100016: wing_right_rotor1
+    100018: wing_right_rotor2
+    100020: wings
+    400000: //RootNode
+    400002: glass
+    400004: interior
+    400006: rudder_steering
+    400008: wheel_front_left
+    400010: wheel_front_right
+    400012: wing_left_rotor1
+    400014: wing_left_rotor2
+    400016: wing_right_rotor1
+    400018: wing_right_rotor2
+    400020: wings
+    2300000: //RootNode
+    2300002: glass
+    2300004: interior
+    2300006: rudder_steering
+    2300008: wheel_front_left
+    2300010: wheel_front_right
+    2300012: wing_left_rotor1
+    2300014: wing_left_rotor2
+    2300016: wing_right_rotor1
+    2300018: wing_right_rotor2
+    2300020: wings
+    3300000: //RootNode
+    3300002: glass
+    3300004: interior
+    3300006: rudder_steering
+    3300008: wheel_front_left
+    3300010: wheel_front_right
+    3300012: wing_left_rotor1
+    3300014: wing_left_rotor2
+    3300016: wing_right_rotor1
+    3300018: wing_right_rotor2
+    3300020: wings
+    4300000: C130
+    4300002: wings
+    4300004: wheel_front_left
+    4300006: wheel_front_right
+    4300008: interior
+    4300010: wing_left_rotor1
+    4300012: wing_left_rotor2
+    4300014: wing_right_rotor1
+    4300016: wing_right_rotor2
+    4300018: rudder_steering
+    4300020: glass
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 1
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  userData: 
