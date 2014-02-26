@@ -11,8 +11,14 @@ public class GeneratePlane : MonoBehaviour {
     {
         //TODO
         System.Random rng = new System.Random();
-        int plane = rng.Next(0, planes.Length);
-        Debug.Log(plane);
-        GameObject.Instantiate(planes[plane]);
+        int planeNr = rng.Next(0, planes.Length);
+        Debug.Log(planeNr);
+        GameObject plane = (GameObject)GameObject.Instantiate(planes[planeNr]);
+        generateErrors(plane.GetComponent<PlaneCheckScriptTest>());
+    }
+
+    void generateErrors (PlaneCheckScriptTest plane)
+    {
+        //TODO
     }
 }
