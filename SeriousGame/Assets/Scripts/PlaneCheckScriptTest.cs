@@ -12,6 +12,9 @@ public class PlaneCheckScriptTest : MonoBehaviour {
     public bool leftFlapBroken;
     public bool rightFlapBroken;
 
+    public Vector3 hangarPosition;
+    public Vector3 dispatchPosition;
+
     bool rightEngineStart = false;
     bool leftEngineStart = false;
     bool rightFlapStart = false;
@@ -28,6 +31,7 @@ public class PlaneCheckScriptTest : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         anim = GetComponent<Animator>();
+        dispatchPosition = new Vector3(-70f, transform.position.y, 110f);
 	}
 	
 	// Update is called once per frame
@@ -95,12 +99,32 @@ public class PlaneCheckScriptTest : MonoBehaviour {
 
 	}
 
-	void dispatchPlane() {
+	IEnumerator dispatchPlane() {
 
+        while(transform.position != dispatchPosition)
+        {
+            transform.forward = Vector3.Slerp(transform.forward, (dispatchPosition - transform.position), Time.deltaTime/10);
+            transform.position += transform.forward * Time.deltaTime / 2;
+            if(Vector3.Distance(transform.position, dispatchPosition) < 5)
+            {
+                transform.position = dispatchPosition;
+            }
+
+            yield return null;
+        }
+        GameObject.Destroy(this.gameObject);
+
+        yield return null;
 	}
 
-	void sendToHangar() {
+	IEnumerator sendToHangar() {
 
+        while(transform.position != hangarPosition)
+        {
+            yield return null;
+        }
+
+        yield return null;
 	}
 
     
@@ -196,6 +220,7 @@ public class PlaneCheckScriptTest : MonoBehaviour {
             string message;
             if (dispatch)
             {
+                StartCoroutine("dispatchPlane");
                 if (leftFlapBroken || rightFlapBroken || leftEngineOilLeak || rightEngineOilLeak || rightEngineBroken || leftEngineBroken)
                 {
                     message = "The plane was broken, \nbut you dispatched it. \nIt crashed...";
