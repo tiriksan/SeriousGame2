@@ -42,22 +42,22 @@ public class PlaneCheckScriptTest : MonoBehaviour {
 
 	void StartLeftEngine () {
 		if (leftEngineBroken) {
-			ParticleSystem s = (ParticleSystem) GameObject.Find("Learjet60/Effects/LeftEngineSmoke").GetComponent<ParticleSystem>();
+            ParticleSystem s = (ParticleSystem)transform.Find("Effects/LeftEngineSmoke").GetComponent<ParticleSystem>();
 			s.Play();
 		}
 		if (leftEngineOilLeak) {
-			ParticleSystem s = (ParticleSystem) GameObject.Find("Learjet60/Effects/LeftEngineOilLeak").GetComponent<ParticleSystem>();
+            ParticleSystem s = (ParticleSystem)transform.Find("Effects/LeftEngineOilLeak").GetComponent<ParticleSystem>();
 			s.Play();
 		}
 	}
 
 	void StartRightEngine () {
 		if (rightEngineBroken) {
-			ParticleSystem s = (ParticleSystem) GameObject.Find("Learjet60/Effects/RightEngineSmoke").GetComponent<ParticleSystem>();
+			ParticleSystem s = (ParticleSystem) transform.Find("Effects/RightEngineSmoke").GetComponent<ParticleSystem>();
 			s.Play();
 		}
 		if (rightEngineOilLeak) {
-			ParticleSystem s = (ParticleSystem) GameObject.Find("Learjet60/Effects/RightEngineOilLeak").GetComponent<ParticleSystem>();
+			ParticleSystem s = (ParticleSystem) transform.Find("Effects/RightEngineOilLeak").GetComponent<ParticleSystem>();
 			s.Play();
 		}
 	}
@@ -66,12 +66,12 @@ public class PlaneCheckScriptTest : MonoBehaviour {
     {
         if (leftEngineBroken)
         {
-            ParticleSystem s = (ParticleSystem)GameObject.Find("Learjet60/Effects/LeftEngineSmoke").GetComponent<ParticleSystem>();
+            ParticleSystem s = (ParticleSystem)transform.Find("Effects/LeftEngineSmoke").GetComponent<ParticleSystem>();
             s.Stop();
         }
         if (leftEngineOilLeak)
         {
-            ParticleSystem s = (ParticleSystem)GameObject.Find("Learjet60/Effects/LeftEngineOilLeak").GetComponent<ParticleSystem>();
+            ParticleSystem s = (ParticleSystem)transform.Find("Effects/LeftEngineOilLeak").GetComponent<ParticleSystem>();
             s.Stop();
         }
     }
@@ -80,12 +80,13 @@ public class PlaneCheckScriptTest : MonoBehaviour {
     {
         if (rightEngineBroken)
         {
-            ParticleSystem s = (ParticleSystem)GameObject.Find("Learjet60/Effects/RightEngineSmoke").GetComponent<ParticleSystem>();
+            ParticleSystem s = (ParticleSystem)transform.Find("Effects/RightEngineSmoke").GetComponent<ParticleSystem>();
             s.Stop();
         }
         if (rightEngineOilLeak)
         {
-            ParticleSystem s = (ParticleSystem)GameObject.Find("Learjet60/Effects/RightEngineOilLeak").GetComponent<ParticleSystem>();
+
+            ParticleSystem s = (ParticleSystem)transform.Find("Effects/RightEngineOilLeak").GetComponent<ParticleSystem>();
             s.Stop();
         }
     }
@@ -101,6 +102,8 @@ public class PlaneCheckScriptTest : MonoBehaviour {
 	void sendToHangar() {
 
 	}
+
+    
 
     void OnGUI()
     {
