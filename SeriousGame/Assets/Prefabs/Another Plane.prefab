@@ -823,10 +823,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae19c6cca6e63b444b3eee681045278f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rightEngineBroken: 1
-  leftEngineBroken: 1
-  leftEngineOilLeak: 1
-  rightEngineOilLeak: 1
+  rightEngineBroken: 0
+  leftEngineBroken: 0
+  leftEngineOilLeak: 0
+  rightEngineOilLeak: 0
   leftFlapBroken: 0
   rightFlapBroken: 0
   centerEngineOilLeak: 0
