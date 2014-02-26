@@ -6,7 +6,7 @@ public class GeneratePlane : MonoBehaviour
 {
 
     public GameObject[] planes;
-    public float chanceToGetError = 5; //in %
+    public float chanceToGetError; //in %
 
     public void generatePlane ()
     {
@@ -23,6 +23,7 @@ public class GeneratePlane : MonoBehaviour
         //TODO
         System.Random rng = new System.Random();
         int rnd = rng.Next(0, 100);
+        Debug.Log("Chance for error: " + chanceToGetError + ", rnd: " + rnd); 
         if(rnd < chanceToGetError)
         {
             //set random error
