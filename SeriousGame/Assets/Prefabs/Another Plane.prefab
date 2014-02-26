@@ -109,6 +109,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400012}
   - 114: {fileID: 11400000}
+  - 95: {fileID: 9500002}
   m_Layer: 0
   m_Name: Another Plane
   m_TagString: C130
@@ -364,7 +365,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100012}
   m_LocalRotation: {x: .00510784239, y: .342015058, z: -.00185910251, w: .939678788}
-  m_LocalPosition: {x: -9.0368166, y: -.155128241, z: 45.0732422}
+  m_LocalPosition: {x: -9.0368166, y: 0, z: 45.0732422}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children:
   - {fileID: 400032}
@@ -808,6 +809,20 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: dc92d034d6d48b94f8dc4ab6792b6d22, type: 3}
   m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_ApplyRootMotion: 1
+  m_AnimatePhysics: 0
+  m_HasTransformHierarchy: 1
+--- !u!95 &9500002
+Animator:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100012}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: dc92d034d6d48b94f8dc4ab6792b6d22, type: 3}
+  m_Controller: {fileID: 9100000, guid: 2a794f148bf13de4f9c8be1e889a6ff1, type: 2}
   m_CullingMode: 0
   m_ApplyRootMotion: 1
   m_AnimatePhysics: 0

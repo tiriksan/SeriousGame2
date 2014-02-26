@@ -55,6 +55,10 @@ public class PlaneCheckScriptTest : MonoBehaviour
 
     void StartLeftEngine ()
     {
+        if(tag == "C130")
+        {
+            anim.SetBool("leftEngine", true);
+        }
         if(leftEngineBroken)
         {
             ParticleSystem s = (ParticleSystem)transform.Find("Effects/LeftEngineSmoke").GetComponent<ParticleSystem>();
@@ -69,6 +73,10 @@ public class PlaneCheckScriptTest : MonoBehaviour
 
     void StartRightEngine ()
     {
+        if(tag == "C130")
+        {
+            anim.SetBool("rightEngine", true);
+        }
         if(rightEngineBroken)
         {
             ParticleSystem s = (ParticleSystem)transform.Find("Effects/RightEngineSmoke").GetComponent<ParticleSystem>();
@@ -83,6 +91,10 @@ public class PlaneCheckScriptTest : MonoBehaviour
 
     void StopLeftEngine ()
     {
+        if(tag == "C130")
+        {
+            anim.SetBool("leftEngine", false);
+        }
         if(leftEngineBroken)
         {
             ParticleSystem s = (ParticleSystem)transform.Find("Effects/LeftEngineSmoke").GetComponent<ParticleSystem>();
@@ -97,11 +109,15 @@ public class PlaneCheckScriptTest : MonoBehaviour
 
     void StopRightEngine ()
     {
+        if(tag == "C130")
+        {
+            anim.SetBool("rightEngine", false);
+        }
         if(rightEngineBroken)
         {
             ParticleSystem s = (ParticleSystem)transform.Find("Effects/RightEngineSmoke").GetComponent<ParticleSystem>();
             s.Stop();
-        }
+        } 
         if(rightEngineOilLeak)
         {
 
@@ -112,25 +128,25 @@ public class PlaneCheckScriptTest : MonoBehaviour
 
     void StartCenterEngine ()
     {
-        if(rightEngineBroken)
+        if(centerEngineBroken)
         {
             ParticleSystem s = (ParticleSystem)transform.Find("Effects/CenterEngineSmoke").GetComponent<ParticleSystem>();
-            s.Stop();
+            s.Play();
         }
-        if(rightEngineOilLeak)
+        if(centerEngineOilLeak)
         {
             ParticleSystem s = (ParticleSystem)transform.Find("Effects/CenterEngineOilLeak").GetComponent<ParticleSystem>();
-            s.Stop();
+            s.Play();
         }
     }
     void StopCenterEngine ()
     {
-        if(rightEngineBroken)
+        if(centerEngineBroken)
         {
             ParticleSystem s = (ParticleSystem)transform.Find("Effects/CenterEngineSmoke").GetComponent<ParticleSystem>();
             s.Stop();
         }
-        if(rightEngineOilLeak)
+        if(centerEngineOilLeak)
         {
             ParticleSystem s = (ParticleSystem)transform.Find("Effects/CenterEngineOilLeak").GetComponent<ParticleSystem>();
             s.Stop();
