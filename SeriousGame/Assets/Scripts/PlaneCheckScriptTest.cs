@@ -220,10 +220,8 @@ public class PlaneCheckScriptTest : MonoBehaviour {
 
             GUI.Box(new Rect(Screen.width/2 - 100 , Screen.height/2 , 200 , 100), message);
             if(GUI.Button(new Rect(Screen.width/2 - 100, Screen.height/2 + 110, 200, 50), "Next plane")){
-                //TODO:
-                //Remove current plane
-                //Spawn new plane
-                //Generate errors
+                GameObject.Destroy(this.gameObject);
+                GameObject.Find("InitScript").GetComponent<GeneratePlane>().generatePlane();
             }
         }
 
