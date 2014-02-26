@@ -114,7 +114,7 @@ GameObject:
   - 114: {fileID: 11400000}
   m_Layer: 0
   m_Name: Learjet60 1
-  m_TagString: Untagged
+  m_TagString: Learjet60
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -557,6 +557,8 @@ MonoBehaviour:
   rightEngineOilLeak: 0
   leftFlapBroken: 0
   rightFlapBroken: 0
+  centerEngineOilLeak: 0
+  centerEngineBroken: 0
 --- !u!198 &19800000
 ParticleSystem:
   m_ObjectHideFlags: 1

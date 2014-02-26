@@ -11,14 +11,17 @@ public class PlaneCheckScriptTest : MonoBehaviour {
 	public bool rightEngineOilLeak;
     public bool leftFlapBroken;
     public bool rightFlapBroken;
+    public bool centerEngineOilLeak;
+    public bool centerEngineBroken;
 
-    public Vector3 hangarPosition;
-    public Vector3 dispatchPosition;
+    Vector3 hangarPosition;
+    Vector3 dispatchPosition;
 
     bool rightEngineStart = false;
     bool leftEngineStart = false;
     bool rightFlapStart = false;
     bool leftFlapStart = false;
+    bool centerEngineStart = false;
 
     bool dispatch = false;
     bool endGame = false;
@@ -27,6 +30,7 @@ public class PlaneCheckScriptTest : MonoBehaviour {
     bool rightEngineConfirm = false;
     bool rightFlapConfirm = false;
     bool leftFlapConfirm = false;
+    bool centerEngineConfirm = false;
 
 	// Use this for initialization
 	void Start () {
@@ -95,6 +99,33 @@ public class PlaneCheckScriptTest : MonoBehaviour {
         }
     }
 
+    void StartCenterEngine ()
+    {
+        if(rightEngineBroken)
+        {
+            ParticleSystem s = (ParticleSystem)transform.Find("Effects/CenterEngineSmoke").GetComponent<ParticleSystem>();
+            s.Stop();
+        }
+        if(rightEngineOilLeak)
+        {
+            ParticleSystem s = (ParticleSystem)transform.Find("Effects/CenterEngineOilLeak").GetComponent<ParticleSystem>();
+            s.Stop();
+        }
+    }
+    void StopCenterEngine ()
+    {
+        if(rightEngineBroken)
+        {
+            ParticleSystem s = (ParticleSystem)transform.Find("Effects/CenterEngineSmoke").GetComponent<ParticleSystem>();
+            s.Stop();
+        }
+        if(rightEngineOilLeak)
+        {
+            ParticleSystem s = (ParticleSystem)transform.Find("Effects/CenterEngineOilLeak").GetComponent<ParticleSystem>();
+            s.Stop();
+        }
+    }
+
 	void ShowButtons () {
 
 	}
@@ -132,7 +163,7 @@ public class PlaneCheckScriptTest : MonoBehaviour {
     void OnGUI()
     {
         if(!leftEngineStart && !rightEngineStart && !leftFlapStart && !rightFlapStart && !endGame){
-            if (!rightEngineConfirm)
+            if (!rightEngineConfirm  && tag != "Cessna")
             {
                 if (GUI.Button(new Rect(Screen.width / 2 - 205, Screen.height - 50, 200, 40), "Start right engine"))
                 {
@@ -140,7 +171,7 @@ public class PlaneCheckScriptTest : MonoBehaviour {
                     rightEngineStart = true;
                 }
             }
-            if (!leftEngineConfirm)
+            if(!leftEngineConfirm && tag != "Cessna")
             {
                 if (GUI.Button(new Rect(Screen.width / 2 + 5, Screen.height - 50, 200, 40), "Start left engine"))
                 {
@@ -148,7 +179,15 @@ public class PlaneCheckScriptTest : MonoBehaviour {
                     leftEngineStart = true;
                 }
             }
-            if (!rightFlapConfirm)
+            if(!centerEngineConfirm && tag == "Cessna")
+            {
+                if(GUI.Button(new Rect(Screen.width / 2 - 100, Screen.height - 50, 200, 40), "Start center engine"))
+                {
+                    StartCenterEngine();
+                    centerEngineStart = true;
+                }
+            }
+            if (!rightFlapConfirm && tag=="Learjet60")
             {
                 if (GUI.Button(new Rect(Screen.width / 2 - 205, Screen.height - 95, 200, 40), "Right flap"))
                 {
@@ -161,7 +200,7 @@ public class PlaneCheckScriptTest : MonoBehaviour {
 
                 }
             }
-            if (!leftFlapConfirm)
+            if(!leftFlapConfirm && tag == "Learjet60")
             {
                 if (GUI.Button(new Rect(Screen.width / 2 + 5, Screen.height - 95, 200, 40), "Left flap"))
                 {
@@ -172,16 +211,40 @@ public class PlaneCheckScriptTest : MonoBehaviour {
                     }
                 }
             }
-            if (leftFlapConfirm && leftEngineConfirm && rightEngineConfirm && rightFlapConfirm)
+            if(tag == "Learjet60")
             {
-                if(GUI.Button(new Rect(Screen.width /2 - 100, Screen.height-50 , 200 , 40), "Dispatch")){
-                    dispatch = true;
-                    endGame = true;
+                if(leftFlapConfirm && leftEngineConfirm && rightEngineConfirm && rightFlapConfirm)
+                {
+                    if(GUI.Button(new Rect(Screen.width / 2 - 100, Screen.height - 50, 200, 40), "Dispatch"))
+                    {
+                        dispatch = true;
+                        endGame = true;
+                    }
+                }
+            } else if(tag == "Cessna")
+            {
+                if(centerEngineConfirm)
+                {
+                    if(GUI.Button(new Rect(Screen.width / 2 - 100, Screen.height - 50, 200, 40), "Dispatch"))
+                    {
+                        dispatch = true;
+                        endGame = true;
+                    }
+                }
+            } else if(tag == "C130")
+            {
+                if(leftEngineConfirm && rightEngineConfirm)
+                {
+                    if(GUI.Button(new Rect(Screen.width / 2 - 100, Screen.height - 50, 200, 40), "Dispatch"))
+                    {
+                        dispatch = true;
+                        endGame = true;
+                    }
                 }
             }
         }
 
-        if ((leftEngineStart || rightEngineStart || leftFlapStart || rightFlapStart) && !endGame)
+        if ((leftEngineStart || rightEngineStart || leftFlapStart || rightFlapStart || centerEngineStart) && !endGame)
         {
             if(GUI.Button(new Rect(Screen.width/2 + 5, Screen.height -50 , 200, 40), "Confirm")){
                 if (leftEngineStart)
@@ -208,6 +271,12 @@ public class PlaneCheckScriptTest : MonoBehaviour {
                     anim.SetBool("rightFlap", false);
                     rightFlapStart = false;
                 }
+                if(centerEngineStart)
+                {
+                    centerEngineConfirm = true;
+                    centerEngineStart = false;
+                    StopCenterEngine();
+                }
             }
             if (GUI.Button(new Rect(Screen.width / 2 -205, Screen.height - 50, 200, 40), "Something is wrong.\nSend to hangar"))
             {
@@ -221,7 +290,7 @@ public class PlaneCheckScriptTest : MonoBehaviour {
             if (dispatch)
             {
                 StartCoroutine("dispatchPlane");
-                if (leftFlapBroken || rightFlapBroken || leftEngineOilLeak || rightEngineOilLeak || rightEngineBroken || leftEngineBroken)
+                if (leftFlapBroken || rightFlapBroken || leftEngineOilLeak || rightEngineOilLeak || rightEngineBroken || leftEngineBroken || centerEngineBroken || centerEngineOilLeak)
                 {
                     message = "The plane was broken, \nbut you dispatched it. \nIt crashed...";
 
@@ -233,7 +302,7 @@ public class PlaneCheckScriptTest : MonoBehaviour {
             }
             else
             {
-                if (leftFlapBroken || rightFlapBroken || leftEngineOilLeak || rightEngineOilLeak || rightEngineBroken || leftEngineBroken)
+                if (leftFlapBroken || rightFlapBroken || leftEngineOilLeak || rightEngineOilLeak || rightEngineBroken || leftEngineBroken ||centerEngineBroken || centerEngineOilLeak)
                 {
                     message = "The plane was broken. \nYou made the right decision!";
                 }
