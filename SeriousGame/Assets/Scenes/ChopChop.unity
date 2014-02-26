@@ -130,3 +130,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planes:
   - {fileID: 100012, guid: 4ac96453e15baaf40a23395b888ea7df, type: 2}
+  chanceToGetError: 5
