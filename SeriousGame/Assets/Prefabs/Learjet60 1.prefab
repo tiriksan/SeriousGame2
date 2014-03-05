@@ -473,7 +473,7 @@ EllipsoidParticleEmitter:
   m_GameObject: {fileID: 100024}
   serializedVersion: 2
   m_Enabled: 1
-  m_Emit: 1
+  m_Emit: 0
   minSize: .909999609
   maxSize: .932866693
   minEnergy: .493581027
@@ -500,7 +500,7 @@ EllipsoidParticleEmitter:
   m_GameObject: {fileID: 100026}
   serializedVersion: 2
   m_Enabled: 1
-  m_Emit: 1
+  m_Emit: 0
   minSize: .909999609
   maxSize: .932866693
   minEnergy: .493581027
@@ -664,7 +664,7 @@ ParticleRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100024}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
@@ -695,7 +695,7 @@ ParticleRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100026}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255

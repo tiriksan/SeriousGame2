@@ -61,7 +61,8 @@ public class PlaneCheckScriptTest : MonoBehaviour
         } else
 		{
 			ParticleRenderer s = (ParticleRenderer)transform.Find("Effects/LeftEngine").GetComponent<ParticleRenderer>();
-			s.enabled = true;
+            s.particleEmitter.emit = true;
+            //s.enabled = true;
 		}
         if(leftEngineBroken)
         {
@@ -83,7 +84,7 @@ public class PlaneCheckScriptTest : MonoBehaviour
 		} else
 		{
 			ParticleRenderer s = (ParticleRenderer)transform.Find("Effects/RightEngine").GetComponent<ParticleRenderer>();
-			s.enabled = true;
+            s.particleEmitter.emit = true;
 		}
         if(rightEngineBroken)
         {
@@ -105,7 +106,8 @@ public class PlaneCheckScriptTest : MonoBehaviour
 		} else
 		{
 			ParticleRenderer s = (ParticleRenderer)transform.Find("Effects/LeftEngine").GetComponent<ParticleRenderer>();
-			s.enabled = false;
+            s.particleEmitter.emit = false;
+			//s.enabled = false;
 		}
         if(leftEngineBroken)
         {
@@ -127,7 +129,7 @@ public class PlaneCheckScriptTest : MonoBehaviour
 		} else
 		{
 			ParticleRenderer s = (ParticleRenderer)transform.Find("Effects/RightEngine").GetComponent<ParticleRenderer>();
-			s.enabled = false;
+            s.particleEmitter.emit = false;
 		}
         if(rightEngineBroken)
         {
