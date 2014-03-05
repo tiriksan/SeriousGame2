@@ -229,7 +229,7 @@ public class PlaneCheckScriptTest : MonoBehaviour
         {
             if(!rightEngineConfirm && tag != "Cessna")
             {
-                if(GUI.Button(new Rect(Screen.width / 2 - 205, Screen.height - 50, 200, 40), "Start right engine"))
+                if(GUI.Button(new Rect(Screen.width / 2 + 5, Screen.height - 50, 200, 40), "Start right engine"))
                 {
                     StartRightEngine();
                     rightEngineStart = true;
@@ -237,7 +237,7 @@ public class PlaneCheckScriptTest : MonoBehaviour
             }
             if(!leftEngineConfirm && tag != "Cessna")
             {
-                if(GUI.Button(new Rect(Screen.width / 2 + 5, Screen.height - 50, 200, 40), "Start left engine"))
+                if(GUI.Button(new Rect(Screen.width / 2 - 205, Screen.height - 50, 200, 40), "Start left engine"))
                 {
                     StartLeftEngine();
                     leftEngineStart = true;
@@ -253,7 +253,7 @@ public class PlaneCheckScriptTest : MonoBehaviour
             }
             if(!rightFlapConfirm && tag == "Learjet60")
             {
-                if(GUI.Button(new Rect(Screen.width / 2 - 205, Screen.height - 95, 200, 40), "Right flap"))
+                if(GUI.Button(new Rect(Screen.width / 2 + 5, Screen.height - 95, 200, 40), "Right flap"))
                 {
                     rightFlapStart = true;
                     if(!rightFlapBroken)
@@ -264,7 +264,7 @@ public class PlaneCheckScriptTest : MonoBehaviour
             }
             if(!leftFlapConfirm && tag == "Learjet60")
             {
-                if(GUI.Button(new Rect(Screen.width / 2 + 5, Screen.height - 95, 200, 40), "Left flap"))
+                if(GUI.Button(new Rect(Screen.width / 2 - 205, Screen.height - 95, 200, 40), "Left flap"))
                 {
                     leftFlapStart = true;
                     if(!leftFlapBroken)
