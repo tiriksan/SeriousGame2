@@ -3,7 +3,7 @@ using System.Collections;
 
 public class CameraRotator : MonoBehaviour {
 
-
+//test
 	float yRot = 0;
 
     public Vector3 distanceVector;

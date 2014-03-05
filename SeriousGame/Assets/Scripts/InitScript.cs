@@ -18,7 +18,7 @@ public class InitScript : MonoBehaviour {
 	{
 		if (menuVisible == true)
 		{
-			GUI.Box(new Rect(0,0,Screen.width,Screen.height),"\n\nAircraft startup\n\nThe point of the game is to " +
+			GUI.Box(new Rect(0,0,Screen.width,Screen.height),"\n\nAIRCRAFT STARTUP\n\nThe point of the game is to " +
 				"check the aircrafts for any errors before dispatch. " +
 			        "\nUse the buttons on the bottom of the screen to issue commands to the pilot,\n " +
 				"and press and hold the right mouse button to look around the aircraft.");
