@@ -180,7 +180,7 @@ public class PlaneCheckScriptTest : MonoBehaviour
 
     IEnumerator dispatchPlane ()
     {
-
+		GetComponent<FadeObjectInOut> ().FadeOut();
         while(transform.position != dispatchPosition)
         {
 			if(tag == "Cessna")
@@ -208,6 +208,7 @@ public class PlaneCheckScriptTest : MonoBehaviour
 
     IEnumerator sendToHangar ()
     {
+		GetComponent<FadeObjectInOut> ().FadeOut();
         while(transform.position != hangarPosition)
         {
             transform.forward = Vector3.Slerp(transform.forward, (hangarPosition - transform.position), Time.deltaTime / 10);
