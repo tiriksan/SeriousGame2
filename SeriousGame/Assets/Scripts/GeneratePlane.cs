@@ -7,11 +7,17 @@ public class GeneratePlane : MonoBehaviour
 
     public GameObject[] planes;
     public float chanceToGetError; //in %
+    System.Random rng;
+
+    void Start ()
+    {
+        rng = new System.Random();
+    }
 
     public void generatePlane ()
     {
         //TODO
-        System.Random rng = new System.Random();
+         
         int planeNr = rng.Next(0, planes.Length);
         Debug.Log(planeNr);
         GameObject plane = (GameObject)GameObject.Instantiate(planes[planeNr]);
@@ -21,7 +27,6 @@ public class GeneratePlane : MonoBehaviour
     void generateErrors (PlaneCheckScriptTest plane)
     {
         //TODO
-        System.Random rng = new System.Random();
         int rnd = rng.Next(0, 100);
         Debug.Log("Chance for error: " + chanceToGetError + ", rnd: " + rnd); 
         if(rnd < chanceToGetError)
