@@ -165,6 +165,18 @@ public class PlaneCheckScriptTest : MonoBehaviour
 
         while(transform.position != dispatchPosition)
         {
+			if(tag == "Cessna")
+			{
+				StartCenterEngine();
+				centerEngineStart = true;
+			} else if(tag == "C130")
+			{
+				StartLeftEngine();
+				StartRightEngine();
+			//} else if (tag == "Learjet60")
+			//{
+
+			}
             transform.forward = Vector3.Slerp(transform.forward, (dispatchPosition - transform.position), Time.deltaTime / 10);
             transform.position += transform.forward * Time.deltaTime / 2;
             if(Vector3.Distance(transform.position, dispatchPosition) < 5)
