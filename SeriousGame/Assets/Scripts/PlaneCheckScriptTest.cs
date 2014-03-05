@@ -58,7 +58,11 @@ public class PlaneCheckScriptTest : MonoBehaviour
         if(tag == "C130")
         {
             anim.SetBool("leftEngine", true);
-        }
+        } else
+		{
+			ParticleRenderer s = (ParticleRenderer)transform.Find("Effects/LeftEngine").GetComponent<ParticleRenderer>();
+			s.enabled = true;
+		}
         if(leftEngineBroken)
         {
             ParticleSystem s = (ParticleSystem)transform.Find("Effects/LeftEngineSmoke").GetComponent<ParticleSystem>();
@@ -76,7 +80,11 @@ public class PlaneCheckScriptTest : MonoBehaviour
         if(tag == "C130")
         {
             anim.SetBool("rightEngine", true);
-        }
+		} else
+		{
+			ParticleRenderer s = (ParticleRenderer)transform.Find("Effects/RightEngine").GetComponent<ParticleRenderer>();
+			s.enabled = true;
+		}
         if(rightEngineBroken)
         {
             ParticleSystem s = (ParticleSystem)transform.Find("Effects/RightEngineSmoke").GetComponent<ParticleSystem>();
@@ -94,7 +102,11 @@ public class PlaneCheckScriptTest : MonoBehaviour
         if(tag == "C130")
         {
             anim.SetBool("leftEngine", false);
-        }
+		} else
+		{
+			ParticleRenderer s = (ParticleRenderer)transform.Find("Effects/LeftEngine").GetComponent<ParticleRenderer>();
+			s.enabled = false;
+		}
         if(leftEngineBroken)
         {
             ParticleSystem s = (ParticleSystem)transform.Find("Effects/LeftEngineSmoke").GetComponent<ParticleSystem>();
@@ -112,7 +124,11 @@ public class PlaneCheckScriptTest : MonoBehaviour
         if(tag == "C130")
         {
             anim.SetBool("rightEngine", false);
-        }
+		} else
+		{
+			ParticleRenderer s = (ParticleRenderer)transform.Find("Effects/RightEngine").GetComponent<ParticleRenderer>();
+			s.enabled = false;
+		}
         if(rightEngineBroken)
         {
             ParticleSystem s = (ParticleSystem)transform.Find("Effects/RightEngineSmoke").GetComponent<ParticleSystem>();
@@ -168,14 +184,14 @@ public class PlaneCheckScriptTest : MonoBehaviour
 			if(tag == "Cessna")
 			{
 				StartCenterEngine();
-				centerEngineStart = true;
 			} else if(tag == "C130")
 			{
 				StartLeftEngine();
 				StartRightEngine();
-			//} else if (tag == "Learjet60")
-			//{
-
+			} else if (tag == "Learjet60")
+			{
+				StartLeftEngine();
+				StartRightEngine();
 			}
             transform.forward = Vector3.Slerp(transform.forward, (dispatchPosition - transform.position), Time.deltaTime / 10);
             transform.position += transform.forward * Time.deltaTime / 2;
