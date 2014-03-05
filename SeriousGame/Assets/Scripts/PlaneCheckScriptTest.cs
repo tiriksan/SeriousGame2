@@ -128,6 +128,7 @@ public class PlaneCheckScriptTest : MonoBehaviour
 
     void StartCenterEngine ()
     {
+        anim.SetBool("centerEngine", true);
         if(centerEngineBroken)
         {
             ParticleSystem s = (ParticleSystem)transform.Find("Effects/CenterEngineSmoke").GetComponent<ParticleSystem>();
@@ -141,6 +142,7 @@ public class PlaneCheckScriptTest : MonoBehaviour
     }
     void StopCenterEngine ()
     {
+        anim.SetBool("centerEngine", false);
         if(centerEngineBroken)
         {
             ParticleSystem s = (ParticleSystem)transform.Find("Effects/CenterEngineSmoke").GetComponent<ParticleSystem>();
